@@ -1,0 +1,37 @@
+# Environment variables
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+ENV/
+env/
+.eggs/
+*.egg-info/
+*.egg
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Generated data files
+benchmark_data.json
+benchmark_history.json
+monitor.log
+latest_scrape.png
+debug_page.txt
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Chrome/Selenium
+*.log
+chromedriver*
