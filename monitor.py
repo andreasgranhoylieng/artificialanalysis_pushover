@@ -77,6 +77,35 @@ logger = logging.getLogger(__name__)
 # PUSHOVER NOTIFICATIONS
 # ============================================================================
 
+def validate_pushover_credentials() -> bool:
+    """Validate Pushover API credentials. Raises exception if invalid."""
+    if not PUSHOVER_USER_KEY or not PUSHOVER_API_TOKEN:
+        raise ValueError("PUSHOVER_USER_KEY and PUSHOVER_API_TOKEN must be set")
+    
+    try:
+        response = requests.post(
+            "https://api.pushover.net/1/users/validate.json",
+            data={
+                "token": PUSHOVER_API_TOKEN,
+                "user": PUSHOVER_USER_KEY
+            },
+            timeout=10,
+            verify=False
+        )
+        
+        result = response.json()
+        
+        if response.status_code == 200 and result.get("status") == 1:
+            logger.info("✓ Pushover credentials validated successfully")
+            return True
+        else:
+            error_msg = result.get("errors", ["Unknown error"])
+            raise ValueError(f"Invalid Pushover credentials: {error_msg}")
+            
+    except requests.exceptions.RequestException as e:
+        raise ValueError(f"Failed to validate Pushover credentials: {e}")
+
+
 def send_pushover(title: str, message: str, priority: int = 0, image_path: str = None) -> bool:
     """Send a Pushover notification with optional image attachment."""
     if not PUSHOVER_API_TOKEN:
@@ -649,6 +678,13 @@ if __name__ == "__main__":
                         help=f"Check interval in minutes (default: {SCRAPE_INTERVAL_MINUTES})")
     
     args = parser.parse_args()
+    
+    # Validate Pushover credentials before starting
+    try:
+        validate_pushover_credentials()
+    except ValueError as e:
+        logger.error(f"❌ {e}")
+        exit(1)
     
     if args.once:
         run_once()
