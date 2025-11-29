@@ -434,7 +434,7 @@ class BenchmarkScraper:
             # Take final combined screenshot
             self.driver.execute_script("window.scrollTo(0, 600);")
             time.sleep(1)
-            #self.driver.save_screenshot("latest_scrape.png")
+            self.driver.save_screenshot("latest_scrape.png")
             
             # Debug: save page content
             body = self.driver.find_element(By.TAG_NAME, "body")
