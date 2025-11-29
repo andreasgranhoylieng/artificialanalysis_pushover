@@ -25,7 +25,7 @@ env/
 benchmark_data.json
 benchmark_history.json
 monitor.log
-latest_scrape.png
+*.png
 debug_page.txt
 
 # OS files
