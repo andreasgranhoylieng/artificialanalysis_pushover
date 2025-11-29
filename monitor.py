@@ -136,15 +136,17 @@ class BenchmarkScraper:
     """Scrapes benchmark data from artificialanalysis.ai"""
     
     # Text to ignore (UI elements, navigation, descriptions)
+    # Use word boundaries or full phrases to avoid partial matches
     IGNORE_PATTERNS = [
         'add model', 'specific provider', 'artificial analysis', 
         'of 342 models', 'benchmark', 'leaderboard', 'filter',
         'incorporates', 'evaluations', 'represents', 'average',
-        'open weights', 'proprietary', 'reasoning', 'non-reasoning',
-        'index', 'coding', 'agentic', 'intelligence', 'click', 'select',
-        'compare', 'view', 'show', 'hide', 'more', 'less', 'all',
-        'subscribe', 'newsletter', 'contact', 'about', 'privacy',
-        'terms', 'cookie', 'sign in', 'log in', 'register'
+        'open weights', 'proprietary', 'non-reasoning',
+        'coding index', 'agentic index', 'intelligence index', 
+        'click here', 'select', 'compare models', 'view all', 
+        'show more', 'hide', 'show less',
+        'subscribe', 'newsletter', 'contact us', 'about us', 'privacy',
+        'terms of', 'cookie', 'sign in', 'log in', 'register'
     ]
     
     def __init__(self):
@@ -227,38 +229,101 @@ class BenchmarkScraper:
                 return score
         return None
     
-    def _extract_chart_data(self) -> List[Dict]:
-        """Extract model data from the currently visible chart."""
+    def _extract_chart_data(self, index_type: str = "intelligence") -> List[Dict]:
+        """Extract model data from the currently visible chart.
+        
+        Args:
+            index_type: One of "intelligence", "coding", or "agentic"
+        """
         models = []
         try:
             # Get page text
             body = self.driver.find_element(By.TAG_NAME, "body")
             page_text = body.text
-            
-            # Find the chart section - look for pattern of model names followed by scores
             lines = page_text.split('\n')
             
-            # Find where the chart data starts (after "Artificial Analysis" marker in chart area)
-            in_chart = False
-            chart_lines = []
+            # For Intelligence and Coding, use the Highlights section at the top
+            # For Agentic, use the main chart section
             
-            for i, line in enumerate(lines):
-                line = line.strip()
+            if index_type == "intelligence":
+                # Look for "INTELLIGENCE" section in Highlights
+                in_chart = False
+                chart_lines = []
+                for i, line in enumerate(lines):
+                    line = line.strip()
+                    if line == "INTELLIGENCE":
+                        in_chart = True
+                        continue
+                    if in_chart and line in ["SPEED", "PRICE"]:
+                        break
+                    if in_chart and line:
+                        # Skip the header line
+                        if "Higher is better" in line:
+                            continue
+                        chart_lines.append(line)
+                        
+            elif index_type == "coding":
+                # For Coding Index, look for the section after clicking the tab
+                # The coding data appears after "Coding Index" description
+                in_chart = False
+                chart_lines = []
+                found_coding_section = False
                 
-                # Look for the models count marker that appears before chart data
-                if "of 342 models" in line or "+ Add model" in line:
-                    in_chart = True
-                    continue
-                
-                # End markers
-                if in_chart and ("Artificial Analysis Intelligence Index" in line or 
-                                "Open Weights vs Proprietary" in line or
-                                "Reasoning vs Non-Reasoning" in line or
-                                '{"@context"' in line):
-                    break
+                for i, line in enumerate(lines):
+                    line = line.strip()
                     
-                if in_chart and line:
-                    chart_lines.append(line)
+                    # Look for the Coding Index chart header
+                    if "Artificial Analysis Coding Index" in line or \
+                       ("Coding Index" in line and "of 342 models" in lines[i+1] if i+1 < len(lines) else False):
+                        found_coding_section = True
+                        continue
+                    
+                    if found_coding_section and ("of 342 models" in line or "+ Add model" in line):
+                        in_chart = True
+                        continue
+                        
+                    if in_chart and '{"@context"' in line:
+                        break
+                        
+                    if in_chart and line:
+                        chart_lines.append(line)
+                
+                # Fallback: use the main chart if coding-specific not found
+                if not chart_lines:
+                    in_chart = False
+                    for i, line in enumerate(lines):
+                        line = line.strip()
+                        if "of 342 models" in line or "+ Add model" in line:
+                            in_chart = True
+                            continue
+                        if in_chart and '{"@context"' in line:
+                            break
+                        if in_chart and line:
+                            chart_lines.append(line)
+                            
+            else:  # agentic
+                # Look for Agentic Index section
+                in_chart = False
+                chart_lines = []
+                found_agentic = False
+                
+                for i, line in enumerate(lines):
+                    line = line.strip()
+                    
+                    # Look for Agentic Index header
+                    if "Artificial Analysis Agentic Index" in line:
+                        found_agentic = True
+                        continue
+                    
+                    if found_agentic and ("of 342 models" in line or "+ Add model" in line):
+                        in_chart = True
+                        continue
+                        
+                    if in_chart and '{"@context"' in line:
+                        break
+                        
+                    if in_chart and line:
+                        chart_lines.append(line)
             
             # Parse chart lines - models come first, then scores
             names = []
@@ -286,7 +351,7 @@ class BenchmarkScraper:
                     "score": score
                 })
                 
-            logger.info(f"Extracted {len(models)} models from current chart")
+            logger.info(f"Extracted {len(models)} models from {index_type} chart")
             
         except Exception as e:
             logger.error(f"Error extracting chart data: {e}")
@@ -347,7 +412,7 @@ class BenchmarkScraper:
             logger.info("Extracting Intelligence Index...")
             self._click_tab("Artificial Analysis Intelligence Index")
             time.sleep(1)
-            data["intelligence_index"] = self._extract_chart_data()
+            data["intelligence_index"] = self._extract_chart_data("intelligence")
             
             # Take screenshot of Intelligence Index
             self.driver.save_screenshot("screenshot_intelligence.png")
@@ -356,14 +421,14 @@ class BenchmarkScraper:
             logger.info("Extracting Coding Index...")
             if self._click_tab("Coding Index"):
                 time.sleep(2)
-                data["coding_index"] = self._extract_chart_data()
+                data["coding_index"] = self._extract_chart_data("coding")
                 self.driver.save_screenshot("screenshot_coding.png")
             
             # Click Agentic Index tab and extract  
             logger.info("Extracting Agentic Index...")
             if self._click_tab("Agentic Index"):
                 time.sleep(2)
-                data["agentic_index"] = self._extract_chart_data()
+                data["agentic_index"] = self._extract_chart_data("agentic")
                 self.driver.save_screenshot("screenshot_agentic.png")
             
             # Take final combined screenshot
