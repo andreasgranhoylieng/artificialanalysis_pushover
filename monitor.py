@@ -415,26 +415,26 @@ class BenchmarkScraper:
             data["intelligence_index"] = self._extract_chart_data("intelligence")
             
             # Take screenshot of Intelligence Index
-            self.driver.save_screenshot("screenshot_intelligence.png")
+            #self.driver.save_screenshot("screenshot_intelligence.png")
             
             # Click Coding Index tab and extract
             logger.info("Extracting Coding Index...")
             if self._click_tab("Coding Index"):
                 time.sleep(2)
                 data["coding_index"] = self._extract_chart_data("coding")
-                self.driver.save_screenshot("screenshot_coding.png")
+                #self.driver.save_screenshot("screenshot_coding.png")
             
             # Click Agentic Index tab and extract  
             logger.info("Extracting Agentic Index...")
             if self._click_tab("Agentic Index"):
                 time.sleep(2)
                 data["agentic_index"] = self._extract_chart_data("agentic")
-                self.driver.save_screenshot("screenshot_agentic.png")
+                #self.driver.save_screenshot("screenshot_agentic.png")
             
             # Take final combined screenshot
             self.driver.execute_script("window.scrollTo(0, 600);")
             time.sleep(1)
-            self.driver.save_screenshot("latest_scrape.png")
+            #self.driver.save_screenshot("latest_scrape.png")
             
             # Debug: save page content
             body = self.driver.find_element(By.TAG_NAME, "body")
