@@ -135,19 +135,16 @@ def send_pushover(title: str, message: str, priority: int = 0, image_path: str =
 class BenchmarkScraper:
     """Scrapes benchmark data from artificialanalysis.ai"""
     
-    # Model name patterns for validation
-    MODEL_KEYWORDS = [
-        'gemini', 'gpt', 'claude', 'grok', 'llama', 'deepseek', 'qwen', 
-        'kimi', 'minimax', 'glm', 'mistral', 'magistral', 'o1', 'o3', 
-        'codex', 'flash', 'haiku', 'sonnet', 'opus', 'nemotron', 'exaone',
-        'phi', 'preview', 'thinking', 'pro', 'maverick', 'ariel', 'exp'
-    ]
-    
-    # Text to ignore (UI elements)
+    # Text to ignore (UI elements, navigation, descriptions)
     IGNORE_PATTERNS = [
         'add model', 'specific provider', 'artificial analysis', 
         'of 342 models', 'benchmark', 'leaderboard', 'filter',
-        'incorporates', 'evaluations', 'represents', 'average'
+        'incorporates', 'evaluations', 'represents', 'average',
+        'open weights', 'proprietary', 'reasoning', 'non-reasoning',
+        'index', 'coding', 'agentic', 'intelligence', 'click', 'select',
+        'compare', 'view', 'show', 'hide', 'more', 'less', 'all',
+        'subscribe', 'newsletter', 'contact', 'about', 'privacy',
+        'terms', 'cookie', 'sign in', 'log in', 'register'
     ]
     
     def __init__(self):
@@ -175,20 +172,52 @@ class BenchmarkScraper:
             self.driver = None
     
     def _is_model_name(self, text: str) -> bool:
-        """Check if text looks like an AI model name."""
-        if not text or len(text) < 3 or len(text) > 60:
+        """
+        Check if text looks like an AI model name.
+        Uses heuristics instead of keyword matching to handle new/unknown models.
+        """
+        if not text or len(text) < 2 or len(text) > 80:
             return False
-        text_lower = text.lower()
+            
+        text_lower = text.lower().strip()
         
         # Check if it's UI text to ignore
         if any(ignore in text_lower for ignore in self.IGNORE_PATTERNS):
             return False
         
-        # Must start with + or letter, not just be UI chrome
-        if text.startswith('+') or text.startswith('×'):
+        # Reject common UI patterns
+        if text.startswith(('+', '×', '•', '→', '←', '↑', '↓')):
             return False
             
-        return any(kw in text_lower for kw in self.MODEL_KEYWORDS)
+        # Reject if it's just a number or very short
+        if text.isdigit() or len(text_lower) < 2:
+            return False
+            
+        # Reject if it looks like a sentence (too many spaces, ends with punctuation)
+        if text.count(' ') > 6:
+            return False
+        if text.endswith(('.', '!', '?', ':')):
+            return False
+            
+        # Reject pure URLs
+        if text_lower.startswith(('http://', 'https://', 'www.')):
+            return False
+        
+        # Model names typically have:
+        # - Alphanumeric characters with optional hyphens, underscores, dots
+        # - Version numbers (1.5, 2.0, v2, etc.)
+        # - Size indicators (7B, 70B, etc.)
+        
+        # Check if it matches typical model name patterns
+        # Allow: letters, numbers, spaces, hyphens, underscores, dots, parentheses
+        if not re.match(r'^[\w\s\-\.\(\)]+$', text, re.UNICODE):
+            return False
+        
+        # Must contain at least one letter
+        if not any(c.isalpha() for c in text):
+            return False
+            
+        return True
     
     def _is_score(self, text: str) -> Optional[int]:
         """Check if text is a valid score (10-99)."""
@@ -475,11 +504,11 @@ class BenchmarkMonitor:
             # First run
             logger.info("First run - saving initial state")
             self._save_data(new_data)
-            send_pushover(
-                "🤖 Benchmark Monitor Started",
-                f"Tracking {total} models.\nMonitoring Intelligence, Coding & Agentic indices.",
-                image_path="screenshot_intelligence.png"
-            )
+            #send_pushover(
+            #    "🤖 Benchmark Monitor Started",
+            #    f"Tracking {total} models.\nMonitoring Intelligence, Coding & Agentic indices.",
+            #    image_path="screenshot_intelligence.png"
+            #)
             return False, []
         
         # Compare
