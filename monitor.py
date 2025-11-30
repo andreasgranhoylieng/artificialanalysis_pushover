@@ -168,7 +168,7 @@ class BenchmarkScraper:
     # Use word boundaries or full phrases to avoid partial matches
     IGNORE_PATTERNS = [
         'add model', 'specific provider', 'artificial analysis', 
-        'of 342 models', 'benchmark', 'leaderboard', 'filter',
+        'benchmark', 'leaderboard', 'filter',
         'incorporates', 'evaluations', 'represents', 'average',
         'open weights', 'proprietary', 'non-reasoning',
         'coding index', 'agentic index', 'intelligence index', 
@@ -214,6 +214,10 @@ class BenchmarkScraper:
         
         # Check if it's UI text to ignore
         if any(ignore in text_lower for ignore in self.IGNORE_PATTERNS):
+            return False
+        
+        # Reject "X of Y models" patterns (e.g., "25 of 342 models", "25 of 345 models")
+        if re.match(r'^\d+\s+of\s+\d+\s+models?$', text_lower):
             return False
         
         # Reject common UI patterns
