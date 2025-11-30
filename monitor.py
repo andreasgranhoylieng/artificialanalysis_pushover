@@ -275,88 +275,28 @@ class BenchmarkScraper:
             page_text = body.text
             lines = page_text.split('\n')
             
-            # For Intelligence and Coding, use the Highlights section at the top
-            # For Agentic, use the main chart section
+            # Find the first "25 of 34X models" marker and extract the chart after it
+            in_chart = False
+            chart_lines = []
             
-            if index_type == "intelligence":
-                # Look for "INTELLIGENCE" section in Highlights
-                in_chart = False
-                chart_lines = []
-                for i, line in enumerate(lines):
-                    line = line.strip()
-                    if line == "INTELLIGENCE":
-                        in_chart = True
-                        continue
-                    if in_chart and line in ["SPEED", "PRICE"]:
-                        break
-                    if in_chart and line:
-                        # Skip the header line
-                        if "Higher is better" in line:
-                            continue
-                        chart_lines.append(line)
-                        
-            elif index_type == "coding":
-                # For Coding Index, look for the section after clicking the tab
-                # The coding data appears after "Coding Index" description
-                in_chart = False
-                chart_lines = []
-                found_coding_section = False
+            for i, line in enumerate(lines):
+                line = line.strip()
                 
-                for i, line in enumerate(lines):
-                    line = line.strip()
-                    
-                    # Look for the Coding Index chart header
-                    if "Artificial Analysis Coding Index" in line or \
-                       ("Coding Index" in line and "of 342 models" in lines[i+1] if i+1 < len(lines) else False):
-                        found_coding_section = True
-                        continue
-                    
-                    if found_coding_section and ("of 342 models" in line or "+ Add model" in line):
-                        in_chart = True
-                        continue
-                        
-                    if in_chart and '{"@context"' in line:
-                        break
-                        
-                    if in_chart and line:
-                        chart_lines.append(line)
+                # Look for the models count marker (e.g., "25 of 345 models")
+                if re.match(r'^\d+\s+of\s+\d+\s+models?$', line.lower()):
+                    in_chart = True
+                    continue
                 
-                # Fallback: use the main chart if coding-specific not found
-                if not chart_lines:
-                    in_chart = False
-                    for i, line in enumerate(lines):
-                        line = line.strip()
-                        if "of 342 models" in line or "+ Add model" in line:
-                            in_chart = True
-                            continue
-                        if in_chart and '{"@context"' in line:
-                            break
-                        if in_chart and line:
-                            chart_lines.append(line)
-                            
-            else:  # agentic
-                # Look for Agentic Index section
-                in_chart = False
-                chart_lines = []
-                found_agentic = False
+                # Skip "+ Add model" line
+                if in_chart and "+ Add model" in line:
+                    continue
                 
-                for i, line in enumerate(lines):
-                    line = line.strip()
+                # End at JSON schema data
+                if in_chart and '{"@context"' in line:
+                    break
                     
-                    # Look for Agentic Index header
-                    if "Artificial Analysis Agentic Index" in line:
-                        found_agentic = True
-                        continue
-                    
-                    if found_agentic and ("of 342 models" in line or "+ Add model" in line):
-                        in_chart = True
-                        continue
-                        
-                    if in_chart and '{"@context"' in line:
-                        break
-                        
-                    if in_chart and line:
-                        chart_lines.append(line)
+                if in_chart and line:
+                    chart_lines.append(line)
             
             # Parse chart lines - models come first, then scores
             names = []
@@ -377,7 +317,8 @@ class BenchmarkScraper:
                         names.append(clean)
             
             # Match names with scores (they appear in same order)
-            for i, (name, score) in enumerate(zip(names, scores)):
+            # Limit to 25 models (the chart shows 25)
+            for i, (name, score) in enumerate(zip(names[:25], scores[:25])):
                 models.append({
                     "rank": i + 1,
                     "model": name,
