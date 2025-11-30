@@ -29,16 +29,6 @@ jobs:
         run: |
           pip install -r requirements.txt
 
-      - name: Download previous data
-        uses: actions/cache@v4
-        with:
-          path: |
-            benchmark_data.json
-            benchmark_history.json
-          key: benchmark-data-${{ github.run_id }}
-          restore-keys: |
-            benchmark-data-
-
       - name: Run monitor
         env:
           PUSHOVER_USER_KEY: ${{ secrets.PUSHOVER_USER_KEY }}
@@ -46,11 +36,10 @@ jobs:
         run: |
           python monitor.py --once
 
-      - name: Save data for next run
-        uses: actions/cache/save@v4
-        if: always()
-        with:
-          path: |
-            benchmark_data.json
-            benchmark_history.json
-          key: benchmark-data-${{ github.run_id }}
+      - name: Commit updated data
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add benchmark_data.json benchmark_history.json || true
+          git diff --staged --quiet || git commit -m "Update benchmark data [skip ci]"
+          git push || true

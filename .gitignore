@@ -21,9 +21,9 @@ env/
 *.swp
 *.swo
 
-# Generated data files
-benchmark_data.json
-benchmark_history.json
+# Generated data files (kept in repo for GitHub Actions persistence)
+# benchmark_data.json  - tracked for CI
+# benchmark_history.json - tracked for CI
 monitor.log
 *.png
 debug_page.txt
