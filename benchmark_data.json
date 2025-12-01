@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-12-01T16:23:09.714716",
+  "timestamp": "2025-12-01T17:18:47.835304",
   "source": "https://artificialanalysis.ai/",
   "data": {
     "intelligence_index": [
@@ -55,71 +55,76 @@
       },
       {
         "rank": 11,
-        "model": "Gemini 2.5Pro",
-        "score": 60
-      },
-      {
-        "rank": 12,
         "model": "Qwen3 235BA22B 2507",
         "score": 57
       },
       {
-        "rank": 13,
+        "rank": 12,
         "model": "GLM-4.6",
         "score": 56
       },
       {
-        "rank": 14,
+        "rank": 13,
         "model": "Claude 4.5Haiku",
         "score": 55
       },
       {
-        "rank": 15,
+        "rank": 14,
         "model": "Gemini 2.5Flash(Sep)",
         "score": 54
       },
       {
-        "rank": 16,
+        "rank": 15,
         "model": "gpt-oss-20B(high)",
         "score": 52
       },
       {
-        "rank": 17,
+        "rank": 16,
         "model": "MagistralMedium 1.2",
         "score": 52
       },
       {
-        "rank": 18,
+        "rank": 17,
         "model": "DeepSeekR1 0528",
         "score": 52
       },
       {
-        "rank": 19,
+        "rank": 18,
         "model": "Apriel-v1.5-15B-Thinker",
         "score": 52
       },
       {
-        "rank": 20,
+        "rank": 19,
         "model": "Kimi K2 0905",
         "score": 50
       },
       {
-        "rank": 21,
+        "rank": 20,
         "model": "LlamaNemotronSuper 49B v1.5",
         "score": 45
       },
       {
-        "rank": 22,
+        "rank": 21,
         "model": "GPT-5.1",
         "score": 43
       },
       {
-        "rank": 23,
+        "rank": 22,
         "model": "EXAONE 4.032B",
         "score": 43
       },
       {
+        "rank": 23,
+        "model": "NVIDIANemotronNano 9B V2",
+        "score": 37
+      },
+      {
         "rank": 24,
+        "model": "OLMo 3 32BThink",
+        "score": 36
+      },
+      {
+        "rank": 25,
         "model": "Llama 4Maverick",
         "score": 36
       }
@@ -172,76 +177,81 @@
       },
       {
         "rank": 10,
-        "model": "Gemini 2.5Pro",
-        "score": 49
-      },
-      {
-        "rank": 11,
         "model": "MiniMax-M2",
         "score": 48
       },
       {
-        "rank": 12,
+        "rank": 11,
         "model": "Qwen3 235BA22B 2507",
         "score": 45
       },
       {
-        "rank": 13,
+        "rank": 12,
         "model": "DeepSeekR1 0528",
         "score": 44
       },
       {
-        "rank": 14,
+        "rank": 13,
         "model": "GLM-4.6",
         "score": 44
       },
       {
-        "rank": 15,
+        "rank": 14,
         "model": "Claude 4.5Haiku",
         "score": 43
       },
       {
-        "rank": 16,
+        "rank": 15,
         "model": "Gemini 2.5Flash(Sep)",
         "score": 42
       },
       {
-        "rank": 17,
+        "rank": 16,
         "model": "MagistralMedium 1.2",
         "score": 42
       },
       {
-        "rank": 18,
+        "rank": 17,
         "model": "gpt-oss-20B(high)",
         "score": 41
       },
       {
-        "rank": 19,
+        "rank": 18,
         "model": "Apriel-v1.5-15B-Thinker",
         "score": 39
       },
       {
-        "rank": 20,
+        "rank": 19,
         "model": "Kimi K2 0905",
         "score": 38
       },
       {
-        "rank": 21,
+        "rank": 20,
         "model": "LlamaNemotronSuper 49B v1.5",
         "score": 38
       },
       {
-        "rank": 22,
+        "rank": 21,
         "model": "EXAONE 4.032B",
         "score": 38
       },
       {
-        "rank": 23,
+        "rank": 22,
         "model": "GPT-5.1",
         "score": 36
       },
       {
+        "rank": 23,
+        "model": "OLMo 3 32BThink",
+        "score": 32
+      },
+      {
         "rank": 24,
+        "model": "NVIDIANemotronNano 9B V2",
+        "score": 32
+      },
+      {
+        "rank": 25,
         "model": "Llama 4Maverick",
         "score": 26
       }
@@ -314,52 +324,52 @@
       },
       {
         "rank": 14,
-        "model": "Gemini 2.5Pro",
-        "score": 39
-      },
-      {
-        "rank": 15,
         "model": "Apriel-v1.5-15B-Thinker",
         "score": 39
       },
       {
-        "rank": 16,
+        "rank": 15,
         "model": "gpt-oss-20B(high)",
         "score": 35
       },
       {
-        "rank": 17,
+        "rank": 16,
         "model": "GPT-5.1",
         "score": 34
       },
       {
-        "rank": 18,
+        "rank": 17,
         "model": "Qwen3 235BA22B 2507",
         "score": 33
       },
       {
-        "rank": 19,
+        "rank": 18,
         "model": "MagistralMedium 1.2",
         "score": 32
       },
       {
-        "rank": 20,
+        "rank": 19,
         "model": "Gemini 2.5Flash(Sep)",
         "score": 31
       },
       {
-        "rank": 21,
+        "rank": 20,
         "model": "DeepSeekR1 0528",
         "score": 26
       },
       {
-        "rank": 22,
+        "rank": 21,
         "model": "LlamaNemotronSuper 49B v1.5",
         "score": 17
       },
       {
-        "rank": 23,
+        "rank": 22,
         "model": "Llama 4Maverick",
+        "score": 12
+      },
+      {
+        "rank": 23,
+        "model": "NVIDIANemotronNano 9B V2",
         "score": 12
       },
       {
