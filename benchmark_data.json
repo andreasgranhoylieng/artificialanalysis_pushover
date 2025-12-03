@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-12-03T22:16:49.047209",
+  "timestamp": "2025-12-03T23:14:19.565276",
   "source": "https://artificialanalysis.ai/",
   "data": {
     "intelligence_index": [
@@ -70,62 +70,62 @@
       },
       {
         "rank": 14,
+        "model": "KAT-Coder-ProV1",
+        "score": 57
+      },
+      {
+        "rank": 15,
         "model": "GLM-4.6",
         "score": 56
       },
       {
-        "rank": 15,
+        "rank": 16,
         "model": "Claude 4.5Haiku",
         "score": 55
       },
       {
-        "rank": 16,
+        "rank": 17,
         "model": "Gemini 2.5Flash(Sep)",
         "score": 54
       },
       {
-        "rank": 17,
+        "rank": 18,
         "model": "gpt-oss-20B(high)",
         "score": 52
       },
       {
-        "rank": 18,
+        "rank": 19,
         "model": "MagistralMedium 1.2",
         "score": 52
       },
       {
-        "rank": 19,
+        "rank": 20,
         "model": "DeepSeekR1 0528",
         "score": 52
       },
       {
-        "rank": 20,
+        "rank": 21,
         "model": "Apriel-v1.5-15B-Thinker",
         "score": 52
       },
       {
-        "rank": 21,
+        "rank": 22,
         "model": "GPT-5.1",
         "score": 43
       },
       {
-        "rank": 22,
+        "rank": 23,
         "model": "Mistral Large 3",
         "score": 38
       },
       {
-        "rank": 23,
+        "rank": 24,
         "model": "NVIDIANemotronNano 9B V2",
         "score": 37
       },
       {
-        "rank": 24,
-        "model": "OLMo 3 32BThink",
-        "score": 36
-      },
-      {
         "rank": 25,
-        "model": "Llama 4Maverick",
+        "model": "OLMo 3 32BThink",
         "score": 36
       }
     ],
@@ -222,38 +222,38 @@
       },
       {
         "rank": 19,
-        "model": "gpt-oss-20B(high)",
+        "model": "KAT-Coder-ProV1",
         "score": 41
       },
       {
         "rank": 20,
+        "model": "gpt-oss-20B(high)",
+        "score": 41
+      },
+      {
+        "rank": 21,
         "model": "Apriel-v1.5-15B-Thinker",
         "score": 39
       },
       {
-        "rank": 21,
+        "rank": 22,
         "model": "GPT-5.1",
         "score": 36
       },
       {
-        "rank": 22,
+        "rank": 23,
         "model": "Mistral Large 3",
         "score": 33
       },
       {
-        "rank": 23,
+        "rank": 24,
         "model": "OLMo 3 32BThink",
         "score": 32
       },
       {
-        "rank": 24,
+        "rank": 25,
         "model": "NVIDIANemotronNano 9B V2",
         "score": 32
-      },
-      {
-        "rank": 25,
-        "model": "Llama 4Maverick",
-        "score": 26
       }
     ],
     "agentic_index": [
@@ -314,66 +314,71 @@
       },
       {
         "rank": 12,
+        "model": "KAT-Coder-ProV1",
+        "score": 55
+      },
+      {
+        "rank": 13,
         "model": "GLM-4.6",
         "score": 47
       },
       {
-        "rank": 13,
+        "rank": 14,
         "model": "gpt-oss-120B(high)",
         "score": 44
       },
       {
-        "rank": 14,
+        "rank": 15,
         "model": "Claude 4.5Haiku",
         "score": 40
       },
       {
-        "rank": 15,
+        "rank": 16,
         "model": "Apriel-v1.5-15B-Thinker",
         "score": 39
       },
       {
-        "rank": 16,
+        "rank": 17,
         "model": "gpt-oss-20B(high)",
         "score": 35
       },
       {
-        "rank": 17,
+        "rank": 18,
         "model": "GPT-5.1",
         "score": 34
       },
       {
-        "rank": 18,
+        "rank": 19,
         "model": "Qwen3 235BA22B 2507",
         "score": 33
       },
       {
-        "rank": 19,
+        "rank": 20,
         "model": "MagistralMedium 1.2",
         "score": 32
       },
       {
-        "rank": 20,
+        "rank": 21,
         "model": "Gemini 2.5Flash(Sep)",
         "score": 31
       },
       {
-        "rank": 21,
+        "rank": 22,
         "model": "DeepSeekR1 0528",
         "score": 26
       },
       {
-        "rank": 22,
+        "rank": 23,
         "model": "Mistral Large 3",
         "score": 20
       },
       {
-        "rank": 23,
+        "rank": 24,
         "model": "Llama 4Maverick",
         "score": 12
       },
       {
-        "rank": 24,
+        "rank": 25,
         "model": "NVIDIANemotronNano 9B V2",
         "score": 12
       }
