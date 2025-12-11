@@ -73,6 +73,14 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+
+class PushoverError(RuntimeError):
+    """Raised when Pushover credentials or requests fail."""
+
+
+class ScrapeError(RuntimeError):
+    """Raised when benchmark scraping fails."""
+
 # ============================================================================
 # PUSHOVER NOTIFICATIONS
 # ============================================================================
@@ -80,7 +88,7 @@ logger = logging.getLogger(__name__)
 def validate_pushover_credentials() -> bool:
     """Validate Pushover API credentials. Raises exception if invalid."""
     if not PUSHOVER_USER_KEY or not PUSHOVER_API_TOKEN:
-        raise ValueError("PUSHOVER_USER_KEY and PUSHOVER_API_TOKEN must be set")
+        raise PushoverError("PUSHOVER_USER_KEY and PUSHOVER_API_TOKEN must be set")
     
     try:
         response = requests.post(
@@ -98,20 +106,20 @@ def validate_pushover_credentials() -> bool:
         if response.status_code == 200 and result.get("status") == 1:
             logger.info("✓ Pushover credentials validated successfully")
             return True
-        else:
-            error_msg = result.get("errors", ["Unknown error"])
-            raise ValueError(f"Invalid Pushover credentials: {error_msg}")
+        error_msg = result.get("errors", ["Unknown error"])
+        raise PushoverError(f"Invalid Pushover credentials: {error_msg}")
             
     except requests.exceptions.RequestException as e:
-        raise ValueError(f"Failed to validate Pushover credentials: {e}")
+        raise PushoverError(f"Failed to validate Pushover credentials: {e}") from e
 
 
-def send_pushover(title: str, message: str, priority: int = 0, image_path: str = None) -> bool:
+def send_pushover(title: str, message: str, priority: int = 0, image_path: str = None) -> None:
     """Send a Pushover notification with optional image attachment."""
-    if not PUSHOVER_API_TOKEN:
-        logger.warning("Pushover API token not set - skipping notification")
-        return False
+    if not PUSHOVER_API_TOKEN or not PUSHOVER_USER_KEY:
+        raise PushoverError("Pushover credentials missing. Unable to send notification.")
         
+    attachment_handle = None
+    files = None
     try:
         data = {
             "token": PUSHOVER_API_TOKEN,
@@ -121,15 +129,15 @@ def send_pushover(title: str, message: str, priority: int = 0, image_path: str =
             "priority": priority
         }
         
-        files = None
         if image_path and os.path.exists(image_path):
             try:
+                attachment_handle = open(image_path, "rb")
                 files = {
-                    "attachment": ("benchmark.png", open(image_path, "rb"), "image/png")
+                    "attachment": ("benchmark.png", attachment_handle, "image/png")
                 }
                 logger.info(f"Attaching image: {image_path}")
-            except Exception as e:
-                logger.warning(f"Failed to attach image: {e}")
+            except OSError as exc:
+                raise PushoverError(f"Failed to attach image: {exc}") from exc
         
         response = requests.post(
             "https://api.pushover.net/1/messages.json",
@@ -139,23 +147,15 @@ def send_pushover(title: str, message: str, priority: int = 0, image_path: str =
             verify=False  # Disable SSL verification due to cert issues
         )
         
-        # Close the file if it was opened
-        if files and "attachment" in files:
-            try:
-                files["attachment"][1].close()
-            except:
-                pass
-        
-        if response.status_code == 200:
-            logger.info(f"✓ Pushover sent: {title}")
-            return True
-        else:
-            logger.error(f"Pushover error: {response.status_code} - {response.text}")
-            return False
+        if response.status_code != 200:
+            raise PushoverError(f"Pushover error: {response.status_code} - {response.text}")
+        logger.info(f"✓ Pushover sent: {title}")
             
-    except Exception as e:
-        logger.error(f"Pushover failed: {e}")
-        return False
+    except requests.exceptions.RequestException as e:
+        raise PushoverError(f"Pushover request failed: {e}") from e
+    finally:
+        if attachment_handle:
+            attachment_handle.close()
 
 # ============================================================================
 # SCRAPER
@@ -362,7 +362,7 @@ class BenchmarkScraper:
             logger.error(f"Error clicking tab {tab_name}: {e}")
             return False
     
-    def scrape(self) -> Optional[Dict]:
+    def scrape(self) -> Dict:
         """Scrape all benchmark indices by clicking through each tab."""
         try:
             logger.info("Starting scrape...")
@@ -388,22 +388,17 @@ class BenchmarkScraper:
             time.sleep(1)
             data["intelligence_index"] = self._extract_chart_data("intelligence")
             
-            # Take screenshot of Intelligence Index
-            #self.driver.save_screenshot("screenshot_intelligence.png")
-            
             # Click Coding Index tab and extract
             logger.info("Extracting Coding Index...")
             if self._click_tab("Coding Index"):
                 time.sleep(2)
                 data["coding_index"] = self._extract_chart_data("coding")
-                #self.driver.save_screenshot("screenshot_coding.png")
             
             # Click Agentic Index tab and extract  
             logger.info("Extracting Agentic Index...")
             if self._click_tab("Agentic Index"):
                 time.sleep(2)
                 data["agentic_index"] = self._extract_chart_data("agentic")
-                #self.driver.save_screenshot("screenshot_agentic.png")
             
             # Take final combined screenshot
             self.driver.execute_script("window.scrollTo(0, 600);")
@@ -422,6 +417,9 @@ class BenchmarkScraper:
             }
             
             total = sum(len(v) for v in data.values())
+            if total == 0:
+                raise ScrapeError("No benchmark data could be extracted from artificialanalysis.ai")
+            
             logger.info(f"Scraped {total} total models")
             for idx, models in data.items():
                 if models:
@@ -429,9 +427,11 @@ class BenchmarkScraper:
             
             return result
             
+        except ScrapeError:
+            raise
         except Exception as e:
             logger.error(f"Scrape failed: {e}", exc_info=True)
-            return None
+            raise ScrapeError("Failed to retrieve benchmark data") from e
         finally:
             self._close_driver()
 
@@ -526,22 +526,15 @@ class BenchmarkMonitor:
         
         # Scrape
         new_data = self.scraper.scrape()
-        if not new_data:
-            logger.error("Scrape failed!")
-            return False, []
-        
-        # Check if we got data
         total = sum(len(new_data.get("data", {}).get(k, [])) for k in ["intelligence_index", "coding_index", "agentic_index"])
-        if total == 0:
-            logger.warning("No data extracted")
-            return False, []
+        logger.info(f"Latest scrape captured {total} models across tracked indices")
         
         # Load old data
         old_data = self._load_data()
         
         if old_data is None:
             # First run
-            logger.info("First run - saving initial state")
+            logger.info(f"First run - saving initial state for {total} models")
             self._save_data(new_data)
             #send_pushover(
             #    "🤖 Benchmark Monitor Started",
@@ -552,6 +545,7 @@ class BenchmarkMonitor:
         
         # Compare
         changes = self._compare(old_data, new_data)
+        self._save_data(new_data)
         
         if changes:
             logger.info(f"🚨 {len(changes)} changes detected!")
@@ -565,9 +559,6 @@ class BenchmarkMonitor:
             send_pushover("🚨 Benchmark Changes!", msg, priority=1, image_path="latest_scrape.png")
         else:
             logger.info("✓ No changes")
-        
-        # Save new data
-        self._save_data(new_data)
         
         return len(changes) > 0, changes
 
@@ -627,9 +618,9 @@ if __name__ == "__main__":
     # Validate Pushover credentials before starting
     try:
         validate_pushover_credentials()
-    except ValueError as e:
+    except PushoverError as e:
         logger.error(f"❌ {e}")
-        exit(1)
+        raise
     
     if args.once:
         run_once()
