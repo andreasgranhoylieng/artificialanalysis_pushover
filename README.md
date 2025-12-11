@@ -85,7 +85,7 @@ python monitor.py --interval 15  # Check every 15 minutes
   "source": "https://artificialanalysis.ai/",
   "data": {
     "intelligence_index": [
-      {"rank": 1, "model": "Gemini 2.5 Pro", "score": 73},
+      {"rank": 1, "model": "Gemini 3 Pro (Preview)", "score": 73},
       {"rank": 2, "model": "Claude Opus 4.5", "score": 70}
     ],
     "coding_index": [...],
