@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-12-24T04:32:50.832102",
+  "timestamp": "2025-12-24T05:20:45.650127",
   "source": "https://artificialanalysis.ai/",
   "data": {
     "intelligence_index": [
@@ -60,23 +60,23 @@
       },
       {
         "rank": 12,
-        "model": "KAT-Coder-ProV1",
+        "model": "MiniMax-M2.1",
         "score": 64
       },
       {
         "rank": 13,
+        "model": "KAT-Coder-ProV1",
+        "score": 64
+      },
+      {
+        "rank": 14,
         "model": "Claude 4.5Sonnet",
         "score": 63
       },
       {
-        "rank": 14,
+        "rank": 15,
         "model": "Nova 2.0ProPreview (medium)",
         "score": 62
-      },
-      {
-        "rank": 15,
-        "model": "MiniMax-M2",
-        "score": 61
       },
       {
         "rank": 16,
@@ -197,8 +197,8 @@
       },
       {
         "rank": 14,
-        "model": "MiniMax-M2",
-        "score": 48
+        "model": "MiniMax-M2.1",
+        "score": 50
       },
       {
         "rank": 15,
@@ -319,13 +319,13 @@
       },
       {
         "rank": 13,
-        "model": "Claude 4.5Sonnet",
+        "model": "MiniMax-M2.1",
         "score": 56
       },
       {
         "rank": 14,
-        "model": "MiniMax-M2",
-        "score": 55
+        "model": "Claude 4.5Sonnet",
+        "score": 56
       },
       {
         "rank": 15,
