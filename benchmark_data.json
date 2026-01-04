@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-04T06:25:16.893416",
+  "timestamp": "2026-01-04T07:18:33.279360",
   "source": "https://artificialanalysis.ai/",
   "data": {
     "intelligence_index": [
@@ -121,12 +121,12 @@
       {
         "rank": 24,
         "model": "Mistral Large 3",
-        "score": 38
+        "score": 48
       },
       {
         "rank": 25,
         "model": "OLMo 3 32BThink",
-        "score": 36
+        "score": 38
       }
     ],
     "coding_index": [
