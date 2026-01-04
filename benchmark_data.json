@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-04T05:22:56.573568",
+  "timestamp": "2026-01-04T06:25:16.893416",
   "source": "https://artificialanalysis.ai/",
   "data": {
     "intelligence_index": [
@@ -120,13 +120,13 @@
       },
       {
         "rank": 24,
-        "model": "K2-V2(high)",
-        "score": 46
+        "model": "Mistral Large 3",
+        "score": 38
       },
       {
         "rank": 25,
-        "model": "Mistral Large 3",
-        "score": 38
+        "model": "OLMo 3 32BThink",
+        "score": 36
       }
     ],
     "coding_index": [
@@ -247,13 +247,13 @@
       },
       {
         "rank": 24,
-        "model": "K2-V2(high)",
-        "score": 36
+        "model": "Mistral Large 3",
+        "score": 33
       },
       {
         "rank": 25,
-        "model": "Mistral Large 3",
-        "score": 33
+        "model": "OLMo 3 32BThink",
+        "score": 32
       }
     ],
     "agentic_index": [
@@ -379,8 +379,8 @@
       },
       {
         "rank": 25,
-        "model": "K2-V2(high)",
-        "score": 19
+        "model": "Llama 4Maverick",
+        "score": 12
       }
     ]
   }
