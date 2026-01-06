@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-01-06T11:15:42.999256",
+  "timestamp": "2026-01-06T12:35:08.715930",
   "source": "https://artificialanalysis.ai/",
   "data": {
     "intelligence_index": [
       {
         "rank": 1,
         "model": "GPT-5.2(xhigh)",
-        "score": 50
+        "score": 73
       },
       {
         "rank": 2,
