@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-07T04:37:14.887206",
+  "timestamp": "2026-01-07T05:22:38.928439",
   "source": "https://artificialanalysis.ai/",
   "data": {
     "intelligence_index": [
@@ -100,23 +100,23 @@
       },
       {
         "rank": 20,
-        "model": "DeepSeekR1 0528",
-        "score": 27
-      },
-      {
-        "rank": 21,
         "model": "NVIDIANemotron 3Nano",
         "score": 25
       },
       {
-        "rank": 22,
+        "rank": 21,
         "model": "gpt-oss-20B(high)",
         "score": 25
       },
       {
-        "rank": 23,
+        "rank": 22,
         "model": "Mistral Large 3",
         "score": 23
+      },
+      {
+        "rank": 23,
+        "model": "K2-V2(high)",
+        "score": 21
       },
       {
         "rank": 24,
@@ -202,33 +202,33 @@
       },
       {
         "rank": 16,
-        "model": "DeepSeekR1 0528",
-        "score": 44
-      },
-      {
-        "rank": 17,
         "model": "Apriel-v1.6-15B-Thinker",
         "score": 44
       },
       {
-        "rank": 18,
+        "rank": 17,
         "model": "gpt-oss-20B(high)",
         "score": 41
       },
       {
-        "rank": 19,
+        "rank": 18,
         "model": "KAT-Coder-ProV1",
         "score": 40
       },
       {
-        "rank": 20,
+        "rank": 19,
         "model": "Nova 2.0Lite(medium)",
         "score": 40
       },
       {
-        "rank": 21,
+        "rank": 20,
         "model": "NVIDIANemotron 3Nano",
         "score": 39
+      },
+      {
+        "rank": 21,
+        "model": "K2-V2(high)",
+        "score": 36
       },
       {
         "rank": 22,
@@ -354,18 +354,18 @@
       },
       {
         "rank": 22,
-        "model": "DeepSeekR1 0528",
+        "model": "Mistral Large 3",
         "score": 27
       },
       {
         "rank": 23,
-        "model": "Mistral Large 3",
-        "score": 26
+        "model": "K2-V2(high)",
+        "score": 20
       },
       {
         "rank": 24,
         "model": "Llama 4Maverick",
-        "score": 20
+        "score": 19
       }
     ]
   }
