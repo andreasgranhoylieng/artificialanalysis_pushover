@@ -1,392 +1,5 @@
 [
   {
-    "timestamp": "2025-12-16T18:25:11.971872",
-    "source": "https://artificialanalysis.ai/",
-    "data": {
-      "intelligence_index": [
-        {
-          "rank": 1,
-          "model": "Gemini 3ProPreview (high)",
-          "score": 73
-        },
-        {
-          "rank": 2,
-          "model": "GPT-5.2(xhigh)",
-          "score": 73
-        },
-        {
-          "rank": 3,
-          "model": "ClaudeOpus 4.5",
-          "score": 70
-        },
-        {
-          "rank": 4,
-          "model": "GPT-5.1(high)",
-          "score": 70
-        },
-        {
-          "rank": 5,
-          "model": "Kimi K2Thinking",
-          "score": 67
-        },
-        {
-          "rank": 6,
-          "model": "GPT-5.1Codex(high)",
-          "score": 67
-        },
-        {
-          "rank": 7,
-          "model": "DeepSeekV3.2",
-          "score": 66
-        },
-        {
-          "rank": 8,
-          "model": "Grok 4",
-          "score": 65
-        },
-        {
-          "rank": 9,
-          "model": "Grok 4.1Fast",
-          "score": 64
-        },
-        {
-          "rank": 10,
-          "model": "KAT-Coder-ProV1",
-          "score": 64
-        },
-        {
-          "rank": 11,
-          "model": "Claude 4.5Sonnet",
-          "score": 63
-        },
-        {
-          "rank": 12,
-          "model": "Nova 2.0ProPreview (medium)",
-          "score": 62
-        },
-        {
-          "rank": 13,
-          "model": "MiniMax-M2",
-          "score": 61
-        },
-        {
-          "rank": 14,
-          "model": "gpt-oss-120B(high)",
-          "score": 61
-        },
-        {
-          "rank": 15,
-          "model": "Nova 2.0Lite(medium)",
-          "score": 58
-        },
-        {
-          "rank": 16,
-          "model": "Qwen3 235BA22B 2507",
-          "score": 57
-        },
-        {
-          "rank": 17,
-          "model": "Apriel-v1.6-15B-Thinker",
-          "score": 57
-        },
-        {
-          "rank": 18,
-          "model": "GLM-4.6",
-          "score": 56
-        },
-        {
-          "rank": 19,
-          "model": "Claude 4.5Haiku",
-          "score": 55
-        },
-        {
-          "rank": 20,
-          "model": "Gemini 2.5Flash(Sep)",
-          "score": 54
-        },
-        {
-          "rank": 21,
-          "model": "gpt-oss-20B(high)",
-          "score": 52
-        },
-        {
-          "rank": 22,
-          "model": "MagistralMedium 1.2",
-          "score": 52
-        },
-        {
-          "rank": 23,
-          "model": "DeepSeekR1 0528",
-          "score": 52
-        },
-        {
-          "rank": 24,
-          "model": "NVIDIANemotron 3Nano",
-          "score": 52
-        },
-        {
-          "rank": 25,
-          "model": "GPT-5.1",
-          "score": 43
-        }
-      ],
-      "coding_index": [
-        {
-          "rank": 1,
-          "model": "Gemini 3ProPreview (high)",
-          "score": 62
-        },
-        {
-          "rank": 2,
-          "model": "GPT-5.2(xhigh)",
-          "score": 62
-        },
-        {
-          "rank": 3,
-          "model": "ClaudeOpus 4.5",
-          "score": 60
-        },
-        {
-          "rank": 4,
-          "model": "GPT-5.1(high)",
-          "score": 58
-        },
-        {
-          "rank": 5,
-          "model": "Grok 4",
-          "score": 55
-        },
-        {
-          "rank": 6,
-          "model": "DeepSeekV3.2",
-          "score": 53
-        },
-        {
-          "rank": 7,
-          "model": "GPT-5.1Codex(high)",
-          "score": 53
-        },
-        {
-          "rank": 8,
-          "model": "Kimi K2Thinking",
-          "score": 52
-        },
-        {
-          "rank": 9,
-          "model": "Claude 4.5Sonnet",
-          "score": 50
-        },
-        {
-          "rank": 10,
-          "model": "Grok 4.1Fast",
-          "score": 50
-        },
-        {
-          "rank": 11,
-          "model": "gpt-oss-120B(high)",
-          "score": 50
-        },
-        {
-          "rank": 12,
-          "model": "MiniMax-M2",
-          "score": 48
-        },
-        {
-          "rank": 13,
-          "model": "Nova 2.0ProPreview (medium)",
-          "score": 46
-        },
-        {
-          "rank": 14,
-          "model": "Qwen3 235BA22B 2507",
-          "score": 45
-        },
-        {
-          "rank": 15,
-          "model": "DeepSeekR1 0528",
-          "score": 44
-        },
-        {
-          "rank": 16,
-          "model": "Apriel-v1.6-15B-Thinker",
-          "score": 44
-        },
-        {
-          "rank": 17,
-          "model": "GLM-4.6",
-          "score": 44
-        },
-        {
-          "rank": 18,
-          "model": "Claude 4.5Haiku",
-          "score": 43
-        },
-        {
-          "rank": 19,
-          "model": "Gemini 2.5Flash(Sep)",
-          "score": 42
-        },
-        {
-          "rank": 20,
-          "model": "MagistralMedium 1.2",
-          "score": 42
-        },
-        {
-          "rank": 21,
-          "model": "gpt-oss-20B(high)",
-          "score": 41
-        },
-        {
-          "rank": 22,
-          "model": "KAT-Coder-ProV1",
-          "score": 40
-        },
-        {
-          "rank": 23,
-          "model": "Nova 2.0Lite(medium)",
-          "score": 40
-        },
-        {
-          "rank": 24,
-          "model": "NVIDIANemotron 3Nano",
-          "score": 39
-        },
-        {
-          "rank": 25,
-          "model": "GPT-5.1",
-          "score": 36
-        }
-      ],
-      "agentic_index": [
-        {
-          "rank": 1,
-          "model": "ClaudeOpus 4.5",
-          "score": 67
-        },
-        {
-          "rank": 2,
-          "model": "GPT-5.2(xhigh)",
-          "score": 64
-        },
-        {
-          "rank": 3,
-          "model": "Gemini 3ProPreview (high)",
-          "score": 63
-        },
-        {
-          "rank": 4,
-          "model": "GPT-5.1(high)",
-          "score": 62
-        },
-        {
-          "rank": 5,
-          "model": "DeepSeekV3.2",
-          "score": 62
-        },
-        {
-          "rank": 6,
-          "model": "Kimi K2Thinking",
-          "score": 61
-        },
-        {
-          "rank": 7,
-          "model": "Grok 4.1Fast",
-          "score": 58
-        },
-        {
-          "rank": 8,
-          "model": "GPT-5.1Codex(high)",
-          "score": 58
-        },
-        {
-          "rank": 9,
-          "model": "Nova 2.0ProPreview (medium)",
-          "score": 58
-        },
-        {
-          "rank": 10,
-          "model": "Grok 4",
-          "score": 56
-        },
-        {
-          "rank": 11,
-          "model": "Claude 4.5Sonnet",
-          "score": 56
-        },
-        {
-          "rank": 12,
-          "model": "MiniMax-M2",
-          "score": 55
-        },
-        {
-          "rank": 13,
-          "model": "KAT-Coder-ProV1",
-          "score": 49
-        },
-        {
-          "rank": 14,
-          "model": "GLM-4.6",
-          "score": 47
-        },
-        {
-          "rank": 15,
-          "model": "Nova 2.0Lite(medium)",
-          "score": 46
-        },
-        {
-          "rank": 16,
-          "model": "gpt-oss-120B(high)",
-          "score": 44
-        },
-        {
-          "rank": 17,
-          "model": "Apriel-v1.6-15B-Thinker",
-          "score": 41
-        },
-        {
-          "rank": 18,
-          "model": "Claude 4.5Haiku",
-          "score": 40
-        },
-        {
-          "rank": 19,
-          "model": "gpt-oss-20B(high)",
-          "score": 35
-        },
-        {
-          "rank": 20,
-          "model": "GPT-5.1",
-          "score": 34
-        },
-        {
-          "rank": 21,
-          "model": "Qwen3 235BA22B 2507",
-          "score": 33
-        },
-        {
-          "rank": 22,
-          "model": "MagistralMedium 1.2",
-          "score": 32
-        },
-        {
-          "rank": 23,
-          "model": "Gemini 2.5Flash(Sep)",
-          "score": 31
-        },
-        {
-          "rank": 24,
-          "model": "NVIDIANemotron 3Nano",
-          "score": 27
-        },
-        {
-          "rank": 25,
-          "model": "DeepSeekR1 0528",
-          "score": 26
-        }
-      ]
-    }
-  },
-  {
     "timestamp": "2025-12-16T19:17:08.696941",
     "source": "https://artificialanalysis.ai/",
     "data": {
@@ -192329,6 +191942,373 @@
   },
   {
     "timestamp": "2026-01-08T11:17:42.518387",
+    "source": "https://artificialanalysis.ai/",
+    "data": {
+      "intelligence_index": [
+        {
+          "rank": 1,
+          "model": "GPT-5.2(xhigh)",
+          "score": 51
+        },
+        {
+          "rank": 2,
+          "model": "ClaudeOpus 4.5",
+          "score": 49
+        },
+        {
+          "rank": 3,
+          "model": "Gemini 3ProPreview (high)",
+          "score": 48
+        },
+        {
+          "rank": 4,
+          "model": "GPT-5.1(high)",
+          "score": 47
+        },
+        {
+          "rank": 5,
+          "model": "Gemini 3Flash",
+          "score": 46
+        },
+        {
+          "rank": 6,
+          "model": "Claude 4.5Sonnet",
+          "score": 42
+        },
+        {
+          "rank": 7,
+          "model": "GLM-4.7",
+          "score": 42
+        },
+        {
+          "rank": 8,
+          "model": "Grok 4",
+          "score": 41
+        },
+        {
+          "rank": 9,
+          "model": "DeepSeekV3.2",
+          "score": 41
+        },
+        {
+          "rank": 10,
+          "model": "Kimi K2Thinking",
+          "score": 40
+        },
+        {
+          "rank": 11,
+          "model": "MiniMax-M2.1",
+          "score": 39
+        },
+        {
+          "rank": 12,
+          "model": "MiMo-V2-Flash",
+          "score": 39
+        },
+        {
+          "rank": 13,
+          "model": "Grok 4.1Fast",
+          "score": 38
+        },
+        {
+          "rank": 14,
+          "model": "KAT-Coder-ProV1",
+          "score": 36
+        },
+        {
+          "rank": 15,
+          "model": "Nova 2.0ProPreview (medium)",
+          "score": 35
+        },
+        {
+          "rank": 16,
+          "model": "gpt-oss-120B(high)",
+          "score": 33
+        },
+        {
+          "rank": 17,
+          "model": "Nova 2.0Lite(medium)",
+          "score": 30
+        },
+        {
+          "rank": 18,
+          "model": "Qwen3 235BA22B 2507",
+          "score": 29
+        },
+        {
+          "rank": 19,
+          "model": "Apriel-v1.6-15B-Thinker",
+          "score": 28
+        },
+        {
+          "rank": 20,
+          "model": "gpt-oss-20B(high)",
+          "score": 25
+        },
+        {
+          "rank": 21,
+          "model": "NVIDIANemotron 3Nano",
+          "score": 25
+        },
+        {
+          "rank": 22,
+          "model": "Mistral Large 3",
+          "score": 22
+        },
+        {
+          "rank": 23,
+          "model": "K2-V2(high)",
+          "score": 21
+        },
+        {
+          "rank": 24,
+          "model": "Llama 4Maverick",
+          "score": 19
+        }
+      ],
+      "coding_index": [
+        {
+          "rank": 1,
+          "model": "GPT-5.2(xhigh)",
+          "score": 47
+        },
+        {
+          "rank": 2,
+          "model": "ClaudeOpus 4.5",
+          "score": 46
+        },
+        {
+          "rank": 3,
+          "model": "Gemini 3ProPreview (high)",
+          "score": 45
+        },
+        {
+          "rank": 4,
+          "model": "GPT-5.1(high)",
+          "score": 43
+        },
+        {
+          "rank": 5,
+          "model": "Gemini 3Flash",
+          "score": 41
+        },
+        {
+          "rank": 6,
+          "model": "Grok 4",
+          "score": 40
+        },
+        {
+          "rank": 7,
+          "model": "Claude 4.5Sonnet",
+          "score": 37
+        },
+        {
+          "rank": 8,
+          "model": "DeepSeekV3.2",
+          "score": 35
+        },
+        {
+          "rank": 9,
+          "model": "GLM-4.7",
+          "score": 35
+        },
+        {
+          "rank": 10,
+          "model": "Kimi K2Thinking",
+          "score": 34
+        },
+        {
+          "rank": 11,
+          "model": "MiniMax-M2.1",
+          "score": 32
+        },
+        {
+          "rank": 12,
+          "model": "MiMo-V2-Flash",
+          "score": 31
+        },
+        {
+          "rank": 13,
+          "model": "Grok 4.1Fast",
+          "score": 30
+        },
+        {
+          "rank": 14,
+          "model": "Nova 2.0ProPreview (medium)",
+          "score": 29
+        },
+        {
+          "rank": 15,
+          "model": "gpt-oss-120B(high)",
+          "score": 28
+        },
+        {
+          "rank": 16,
+          "model": "Nova 2.0Lite(medium)",
+          "score": 23
+        },
+        {
+          "rank": 17,
+          "model": "Qwen3 235BA22B 2507",
+          "score": 23
+        },
+        {
+          "rank": 18,
+          "model": "Mistral Large 3",
+          "score": 22
+        },
+        {
+          "rank": 19,
+          "model": "Apriel-v1.6-15B-Thinker",
+          "score": 21
+        },
+        {
+          "rank": 20,
+          "model": "NVIDIANemotron 3Nano",
+          "score": 18
+        },
+        {
+          "rank": 21,
+          "model": "gpt-oss-20B(high)",
+          "score": 18
+        },
+        {
+          "rank": 22,
+          "model": "KAT-Coder-ProV1",
+          "score": 18
+        },
+        {
+          "rank": 23,
+          "model": "K2-V2(high)",
+          "score": 16
+        },
+        {
+          "rank": 24,
+          "model": "Llama 4Maverick",
+          "score": 15
+        }
+      ],
+      "agentic_index": [
+        {
+          "rank": 1,
+          "model": "GPT-5.2(xhigh)",
+          "score": 59
+        },
+        {
+          "rank": 2,
+          "model": "ClaudeOpus 4.5",
+          "score": 59
+        },
+        {
+          "rank": 3,
+          "model": "GLM-4.7",
+          "score": 55
+        },
+        {
+          "rank": 4,
+          "model": "DeepSeekV3.2",
+          "score": 53
+        },
+        {
+          "rank": 5,
+          "model": "MiMo-V2-Flash",
+          "score": 52
+        },
+        {
+          "rank": 6,
+          "model": "Gemini 3ProPreview (high)",
+          "score": 52
+        },
+        {
+          "rank": 7,
+          "model": "Claude 4.5Sonnet",
+          "score": 51
+        },
+        {
+          "rank": 8,
+          "model": "GPT-5.1(high)",
+          "score": 51
+        },
+        {
+          "rank": 9,
+          "model": "Gemini 3Flash",
+          "score": 49
+        },
+        {
+          "rank": 10,
+          "model": "Grok 4.1Fast",
+          "score": 49
+        },
+        {
+          "rank": 11,
+          "model": "MiniMax-M2.1",
+          "score": 48
+        },
+        {
+          "rank": 12,
+          "model": "Kimi K2Thinking",
+          "score": 48
+        },
+        {
+          "rank": 13,
+          "model": "Nova 2.0ProPreview (medium)",
+          "score": 47
+        },
+        {
+          "rank": 14,
+          "model": "KAT-Coder-ProV1",
+          "score": 41
+        },
+        {
+          "rank": 15,
+          "model": "Grok 4",
+          "score": 41
+        },
+        {
+          "rank": 16,
+          "model": "gpt-oss-120B(high)",
+          "score": 37
+        },
+        {
+          "rank": 17,
+          "model": "Nova 2.0Lite(medium)",
+          "score": 34
+        },
+        {
+          "rank": 18,
+          "model": "Apriel-v1.6-15B-Thinker",
+          "score": 30
+        },
+        {
+          "rank": 19,
+          "model": "Qwen3 235BA22B 2507",
+          "score": 30
+        },
+        {
+          "rank": 20,
+          "model": "gpt-oss-20B(high)",
+          "score": 28
+        },
+        {
+          "rank": 21,
+          "model": "Mistral Large 3",
+          "score": 21
+        },
+        {
+          "rank": 22,
+          "model": "NVIDIANemotron 3Nano",
+          "score": 21
+        },
+        {
+          "rank": 23,
+          "model": "K2-V2(high)",
+          "score": 16
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-01-08T12:36:08.258999",
     "source": "https://artificialanalysis.ai/",
     "data": {
       "intelligence_index": [
