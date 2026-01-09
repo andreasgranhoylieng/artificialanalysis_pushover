@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-08T23:15:28.087862",
+  "timestamp": "2026-01-09T01:18:20.743614",
   "source": "https://artificialanalysis.ai/",
   "data": {
     "intelligence_index": [
@@ -111,22 +111,22 @@
       {
         "rank": 22,
         "model": "Mistral Large 3",
-        "score": 22
+        "score": 23
       },
       {
         "rank": 23,
         "model": "K2-V2(high)",
-        "score": 21
+        "score": 22
       },
       {
         "rank": 24,
         "model": "Llama 4Maverick",
-        "score": 19
+        "score": 21
       },
       {
         "rank": 25,
         "model": "Falcon-H1R-7B",
-        "score": 16
+        "score": 19
       }
     ],
     "coding_index": [
@@ -335,17 +335,17 @@
       {
         "rank": 16,
         "model": "gpt-oss-120B(high)",
-        "score": 37
+        "score": 38
       },
       {
         "rank": 17,
         "model": "Nova 2.0Lite(medium)",
-        "score": 34
+        "score": 37
       },
       {
         "rank": 18,
         "model": "Apriel-v1.6-15B-Thinker",
-        "score": 30
+        "score": 34
       },
       {
         "rank": 19,
@@ -355,12 +355,12 @@
       {
         "rank": 20,
         "model": "gpt-oss-20B(high)",
-        "score": 28
+        "score": 30
       },
       {
         "rank": 21,
         "model": "Mistral Large 3",
-        "score": 21
+        "score": 28
       },
       {
         "rank": 22,
@@ -370,11 +370,16 @@
       {
         "rank": 23,
         "model": "K2-V2(high)",
-        "score": 16
+        "score": 21
       },
       {
         "rank": 24,
         "model": "Falcon-H1R-7B",
+        "score": 16
+      },
+      {
+        "rank": 25,
+        "model": "Llama 4Maverick",
         "score": 10
       }
     ]
