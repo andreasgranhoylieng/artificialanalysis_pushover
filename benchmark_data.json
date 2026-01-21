@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-21T20:26:15.268320",
+  "timestamp": "2026-01-21T21:24:50.271269",
   "source": "https://artificialanalysis.ai/",
   "data": {
     "intelligence_index": [
@@ -15,13 +15,13 @@
       },
       {
         "rank": 3,
-        "model": "Gemini 3ProPreview (high)",
+        "model": "GPT-5.2Codex(xhigh)",
         "score": 48
       },
       {
         "rank": 4,
-        "model": "GPT-5.1(high)",
-        "score": 47
+        "model": "Gemini 3ProPreview (high)",
+        "score": 48
       },
       {
         "rank": 5,
@@ -147,8 +147,8 @@
       },
       {
         "rank": 4,
-        "model": "GPT-5.1(high)",
-        "score": 43
+        "model": "GPT-5.2Codex(xhigh)",
+        "score": 41
       },
       {
         "rank": 5,
@@ -269,32 +269,32 @@
       },
       {
         "rank": 3,
+        "model": "GPT-5.2Codex(xhigh)",
+        "score": 56
+      },
+      {
+        "rank": 4,
         "model": "GLM-4.7",
         "score": 55
       },
       {
-        "rank": 4,
+        "rank": 5,
         "model": "DeepSeekV3.2",
         "score": 53
       },
       {
-        "rank": 5,
+        "rank": 6,
         "model": "MiMo-V2-Flash",
         "score": 53
       },
       {
-        "rank": 6,
+        "rank": 7,
         "model": "Gemini 3ProPreview (high)",
         "score": 52
       },
       {
-        "rank": 7,
-        "model": "Claude 4.5Sonnet",
-        "score": 51
-      },
-      {
         "rank": 8,
-        "model": "GPT-5.1(high)",
+        "model": "Claude 4.5Sonnet",
         "score": 51
       },
       {
