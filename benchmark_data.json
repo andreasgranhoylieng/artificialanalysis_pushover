@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-22T01:20:23.684535",
+  "timestamp": "2026-01-22T03:44:20.544941",
   "source": "https://artificialanalysis.ai/",
   "data": {
     "intelligence_index": [
@@ -11,12 +11,12 @@
       {
         "rank": 2,
         "model": "ClaudeOpus 4.5",
-        "score": 49
+        "score": 50
       },
       {
         "rank": 3,
         "model": "GPT-5.2Codex(xhigh)",
-        "score": 48
+        "score": 49
       },
       {
         "rank": 4,
@@ -31,7 +31,7 @@
       {
         "rank": 6,
         "model": "Claude 4.5Sonnet",
-        "score": 42
+        "score": 43
       },
       {
         "rank": 7,
@@ -40,23 +40,23 @@
       },
       {
         "rank": 8,
-        "model": "Grok 4",
-        "score": 41
+        "model": "DeepSeekV3.2",
+        "score": 42
       },
       {
         "rank": 9,
-        "model": "DeepSeekV3.2",
+        "model": "Grok 4",
         "score": 41
       },
       {
         "rank": 10,
         "model": "Kimi K2Thinking",
-        "score": 40
+        "score": 41
       },
       {
         "rank": 11,
         "model": "MiniMax-M2.1",
-        "score": 39
+        "score": 40
       },
       {
         "rank": 12,
@@ -76,7 +76,7 @@
       {
         "rank": 15,
         "model": "Nova 2.0ProPreview (medium)",
-        "score": 35
+        "score": 36
       },
       {
         "rank": 16,
@@ -96,7 +96,7 @@
       {
         "rank": 19,
         "model": "Qwen3 235BA22B 2507",
-        "score": 29
+        "score": 30
       },
       {
         "rank": 20,
@@ -133,27 +133,27 @@
       {
         "rank": 1,
         "model": "GPT-5.2(xhigh)",
-        "score": 47
+        "score": 49
       },
       {
         "rank": 2,
         "model": "ClaudeOpus 4.5",
-        "score": 46
+        "score": 48
       },
       {
         "rank": 3,
         "model": "Gemini 3ProPreview (high)",
-        "score": 45
+        "score": 46
       },
       {
         "rank": 4,
         "model": "GPT-5.2Codex(xhigh)",
-        "score": 41
+        "score": 43
       },
       {
         "rank": 5,
         "model": "Gemini 3Flash",
-        "score": 41
+        "score": 43
       },
       {
         "rank": 6,
@@ -163,57 +163,57 @@
       {
         "rank": 7,
         "model": "Claude 4.5Sonnet",
-        "score": 37
+        "score": 39
       },
       {
         "rank": 8,
         "model": "DeepSeekV3.2",
-        "score": 35
+        "score": 37
       },
       {
         "rank": 9,
         "model": "GLM-4.7",
-        "score": 35
+        "score": 36
       },
       {
         "rank": 10,
         "model": "Kimi K2Thinking",
-        "score": 34
+        "score": 35
       },
       {
         "rank": 11,
         "model": "MiniMax-M2.1",
-        "score": 32
+        "score": 33
       },
       {
         "rank": 12,
         "model": "MiMo-V2-Flash",
-        "score": 31
+        "score": 32
       },
       {
         "rank": 13,
         "model": "Grok 4.1Fast",
-        "score": 30
+        "score": 31
       },
       {
         "rank": 14,
         "model": "Nova 2.0ProPreview (medium)",
-        "score": 29
+        "score": 30
       },
       {
         "rank": 15,
         "model": "gpt-oss-120B(high)",
-        "score": 28
+        "score": 29
       },
       {
         "rank": 16,
         "model": "K-EXAONE",
-        "score": 26
+        "score": 27
       },
       {
         "rank": 17,
         "model": "Nova 2.0Lite(medium)",
-        "score": 23
+        "score": 24
       },
       {
         "rank": 18,
@@ -223,17 +223,17 @@
       {
         "rank": 19,
         "model": "Mistral Large 3",
-        "score": 22
+        "score": 23
       },
       {
         "rank": 20,
         "model": "NVIDIANemotron 3Nano",
-        "score": 18
+        "score": 19
       },
       {
         "rank": 21,
         "model": "gpt-oss-20B(high)",
-        "score": 18
+        "score": 19
       },
       {
         "rank": 22,
@@ -243,7 +243,7 @@
       {
         "rank": 23,
         "model": "HyperCLOVAX SEEDThink (32B)",
-        "score": 17
+        "score": 18
       },
       {
         "rank": 24,
@@ -253,7 +253,7 @@
       {
         "rank": 25,
         "model": "Llama 4Maverick",
-        "score": 15
+        "score": 16
       }
     ],
     "agentic_index": [
