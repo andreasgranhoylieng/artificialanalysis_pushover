@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-24T04:32:28.961439",
+  "timestamp": "2026-01-24T05:18:24.948310",
   "source": "https://artificialanalysis.ai/",
   "data": {
     "intelligence_index": [
@@ -66,7 +66,7 @@
       {
         "rank": 13,
         "model": "Grok 4.1Fast",
-        "score": 39
+        "score": 38
       },
       {
         "rank": 14,
@@ -100,13 +100,13 @@
       },
       {
         "rank": 20,
-        "model": "gpt-oss-20B(high)",
-        "score": 24
+        "model": "NVIDIANemotron 3Nano",
+        "score": 25
       },
       {
         "rank": 21,
-        "model": "NVIDIANemotron 3Nano",
-        "score": 24
+        "model": "gpt-oss-20B(high)",
+        "score": 25
       },
       {
         "rank": 22,
@@ -265,12 +265,12 @@
       {
         "rank": 2,
         "model": "ClaudeOpus 4.5",
-        "score": 60
+        "score": 59
       },
       {
         "rank": 3,
         "model": "GPT-5.2Codex(xhigh)",
-        "score": 57
+        "score": 56
       },
       {
         "rank": 4,
@@ -315,7 +315,7 @@
       {
         "rank": 12,
         "model": "MiniMax-M2.1",
-        "score": 47
+        "score": 48
       },
       {
         "rank": 13,
@@ -330,16 +330,16 @@
       {
         "rank": 15,
         "model": "Grok 4",
-        "score": 42
+        "score": 41
       },
       {
         "rank": 16,
-        "model": "K-EXAONE",
-        "score": 38
+        "model": "HyperCLOVAX SEEDThink (32B)",
+        "score": 40
       },
       {
         "rank": 17,
-        "model": "HyperCLOVAX SEEDThink (32B)",
+        "model": "K-EXAONE",
         "score": 38
       },
       {
@@ -365,7 +365,7 @@
       {
         "rank": 22,
         "model": "Mistral Large 3",
-        "score": 28
+        "score": 29
       },
       {
         "rank": 23,
@@ -375,7 +375,7 @@
       {
         "rank": 24,
         "model": "K2-V2(high)",
-        "score": 19
+        "score": 22
       },
       {
         "rank": 25,
