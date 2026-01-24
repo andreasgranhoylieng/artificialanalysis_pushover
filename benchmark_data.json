@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-24T03:23:42.543624",
+  "timestamp": "2026-01-24T04:32:28.961439",
   "source": "https://artificialanalysis.ai/",
   "data": {
     "intelligence_index": [
@@ -66,7 +66,7 @@
       {
         "rank": 13,
         "model": "Grok 4.1Fast",
-        "score": 38
+        "score": 39
       },
       {
         "rank": 14,
@@ -100,13 +100,13 @@
       },
       {
         "rank": 20,
-        "model": "NVIDIANemotron 3Nano",
-        "score": 25
+        "model": "gpt-oss-20B(high)",
+        "score": 24
       },
       {
         "rank": 21,
-        "model": "gpt-oss-20B(high)",
-        "score": 25
+        "model": "NVIDIANemotron 3Nano",
+        "score": 24
       },
       {
         "rank": 22,
@@ -265,12 +265,12 @@
       {
         "rank": 2,
         "model": "ClaudeOpus 4.5",
-        "score": 59
+        "score": 60
       },
       {
         "rank": 3,
         "model": "GPT-5.2Codex(xhigh)",
-        "score": 56
+        "score": 57
       },
       {
         "rank": 4,
@@ -315,7 +315,7 @@
       {
         "rank": 12,
         "model": "MiniMax-M2.1",
-        "score": 48
+        "score": 47
       },
       {
         "rank": 13,
@@ -330,16 +330,16 @@
       {
         "rank": 15,
         "model": "Grok 4",
-        "score": 41
+        "score": 42
       },
       {
         "rank": 16,
-        "model": "HyperCLOVAX SEEDThink (32B)",
-        "score": 40
+        "model": "K-EXAONE",
+        "score": 38
       },
       {
         "rank": 17,
-        "model": "K-EXAONE",
+        "model": "HyperCLOVAX SEEDThink (32B)",
         "score": 38
       },
       {
@@ -365,7 +365,7 @@
       {
         "rank": 22,
         "model": "Mistral Large 3",
-        "score": 29
+        "score": 28
       },
       {
         "rank": 23,
@@ -375,7 +375,7 @@
       {
         "rank": 24,
         "model": "K2-V2(high)",
-        "score": 22
+        "score": 19
       },
       {
         "rank": 25,
