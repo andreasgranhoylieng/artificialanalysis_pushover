@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-27T14:26:03.126572",
+  "timestamp": "2026-01-27T15:27:06.464387",
   "source": "https://artificialanalysis.ai/",
   "data": {
     "intelligence_index": [
@@ -100,33 +100,33 @@
       },
       {
         "rank": 20,
+        "model": "K2 ThinkV2",
+        "score": 25
+      },
+      {
+        "rank": 21,
         "model": "gpt-oss-20B(high)",
         "score": 24
       },
       {
-        "rank": 21,
+        "rank": 22,
         "model": "NVIDIANemotron 3Nano",
         "score": 24
       },
       {
-        "rank": 22,
+        "rank": 23,
         "model": "HyperCLOVAX SEEDThink (32B)",
         "score": 24
       },
       {
-        "rank": 23,
-        "model": "Mistral Large 3",
-        "score": 23
-      },
-      {
         "rank": 24,
-        "model": "K2-V2(high)",
+        "model": "Mistral Large 3",
         "score": 23
       },
       {
         "rank": 25,
         "model": "Llama 4Maverick",
-        "score": 21
+        "score": 23
       }
     ],
     "coding_index": [
@@ -247,12 +247,12 @@
       },
       {
         "rank": 24,
-        "model": "K2-V2(high)",
+        "model": "Llama 4Maverick",
         "score": 16
       },
       {
         "rank": 25,
-        "model": "Llama 4Maverick",
+        "model": "K2 ThinkV2",
         "score": 16
       }
     ],
@@ -374,13 +374,13 @@
       },
       {
         "rank": 24,
-        "model": "K2-V2(high)",
+        "model": "K2 ThinkV2",
         "score": 19
       },
       {
         "rank": 25,
         "model": "Falcon-H1R-7B",
-        "score": 14
+        "score": 15
       }
     ]
   }
